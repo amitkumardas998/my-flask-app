@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 Predictor | ML Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purple-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --text-dark: #2d3436;
+            --accent-pink: #ff00cc;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Modern Navigation */
+        nav {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* Hero Header with Gradient and Slant */
+        header {
+            background: var(--purple-gradient);
+            color: white;
+            padding: 80px 20px 120px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: -60px auto 60px; /* Overlaps the header */
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Image Styling */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            background: var(--purple-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.7rem;
+            margin-top: 35px;
+            display: inline-block;
+        }
+
+        .source-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .source-list li {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--purple-gradient);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .container { margin: -40px 15px 40px; padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</nav>
+
+<header>
+    <h1>CO₂ Emission Prediction</h1>
+    <p>Harnessing Machine Learning for Environmental Insights</p>
+</header>
+
+<section class="container">
+    <img src="{{ url_for('static', filename='co.png') }}" 
+         alt="AI Prediction Visualization" 
+         class="hero-image">
+
+    <h2>Understanding Carbon Emissions</h2>
+    <p>
+        Carbon emissions refer to the release of carbon dioxide into the atmosphere. 
+        As the primary driver of <strong>global climate change</strong>, monitoring and predicting these 
+        levels is critical for sustainable development.
+    </p>
+
+    <h2>Primary Sources</h2>
+    <ul class="source-list">
+        <li>🚗 Transportation</li>
+        <li>🏭 Industrial Mfg</li>
+        <li>⚡ Energy Production</li>
+        <li>🌳 Deforestation</li>
+    </ul>
+
+    <h2>The ML Prediction Advantage</h2>
+    <p>
+        Using historical data, our Machine Learning models can identify hidden patterns in consumption. 
+        By analyzing variables across industries, we provide accurate forecasts that help 
+        communities reduce their carbon footprint effectively.
+    </p>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="/" style="background: var(--purple-gradient); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);">
+            Try Prediction Model
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Carbon Intelligence Project<br>Building a Greener Future through Data Science</p>
+</footer>
+
+</body>
+</html>
